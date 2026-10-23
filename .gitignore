@@ -1,0 +1,28 @@
+# 采集数据（体积大且含真实用电信息）不入库
+data/raw/
+data/processed/
+*.csv
+!docs/*.csv
+
+# 模型与中间产物
+*.joblib
+*.onnx
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 日志与临时文件
+*.log
+*.tmp
