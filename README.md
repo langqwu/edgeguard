@@ -14,7 +14,7 @@
 | --- | --- | --- |
 | **[docs/00-project.md](docs/00-project.md)** | **总纲**：项目定位（竞赛非产品）、架构（端侧判断+云端进化）、核心设计决策、三条警戒线 | **全队必读** |
 | [docs/01-competition.md](docs/01-competition.md) | 官方赛题原文、**评审权重（初赛创新 60% + 价值 40%）**、晋级规则、往年作品深度参考线 | 写材料的人 |
-| [docs/03-plan.md](docs/03-plan.md) | 五周执行计划、分工、采购清单、风险登记、**初赛不做清单** | 排期的人 |
+| [docs/03-plan.md](docs/03-plan.md) | 五周执行计划、分工、风险登记、**初赛不做清单** | 排期的人 |
 
 其余文档：
 
@@ -105,7 +105,7 @@ python -m src.train --leave-one-out
 │   ├── 00-project.md        # 总纲（定位与架构）
 │   ├── 01-competition.md    # 赛题与评审规则（官方核实）
 │   ├── 02-solution.md       # 技术方案
-│   ├── 03-plan.md           # 执行计划与采购
+│   ├── 03-plan.md           # 执行计划与设备
 │   └── 04-research.md       # 调研与竞品
 ├── src/
 │   ├── pzem.py              # PZEM-004T Modbus-RTU 驱动（零依赖）
