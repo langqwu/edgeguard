@@ -26,6 +26,7 @@
 | [docs/09-option-a-testbox.md](docs/09-option-a-testbox.md) | **方案 A 详解**：现成计量插座/测试盒的三种类型、哪根线插哪个口、验收与排障 |
 | [docs/10-unit-level-monitoring.md](docs/10-unit-level-monitoring.md) | **监测粒度**：从一个插座升级到单元级单点（非侵入式），含混合负载实验与答辩口径 |
 | [docs/11-why-ai-not-threshold.md](docs/11-why-ai-not-threshold.md) | **为什么不是阈值法**：六个失效场景、B1/B2/B3 基线对比、学习用在哪、答辩口径 |
+| [docs/12-differentiation.md](docs/12-differentiation.md) | **区分度评估**：与云南电网/安科瑞/智能插座的八维对照、三个可放大的差异、Plan B |
 
 ---
 
