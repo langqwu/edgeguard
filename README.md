@@ -22,6 +22,7 @@
 | --- | --- |
 | [docs/02-solution.md](docs/02-solution.md) | 技术方案：采集规格、特征、两个必做实验（少样本泛化/声电双模）、云端迭代机制、指标台账、演示脚本 |
 | [docs/04-research.md](docs/04-research.md) | 调研附录：竞品拆解（云南电网/安科瑞）、我们的位置、政策证据、创新性四层判据、踩过的坑 |
+| [docs/08-wiring-and-collection.md](docs/08-wiring-and-collection.md) | **实物操作手册**：PZEM 接线图、CT 安装、TTL 四线接法、上电验证、故障排查、安全红线 |
 
 ---
 
@@ -85,12 +86,17 @@ python -m src.train --leave-one-out
 
 ### 真实采集（需接好 PZEM-004T）
 
+**接线步骤见 [docs/08-wiring-and-collection.md](docs/08-wiring-and-collection.md)。**
+
 ```bash
-python -m tools.list_ports
-python -m src.collect --port COM3 --label e_bike_charger --minutes 30
+python -m tools.list_ports                        # 找到 COMx
+python -m tools.pzem_probe --port COM3            # 探测地址（出厂可能是 0xF8 或 0x01）
+python -m src.collect --port COM3 --label e_bike_charger --minutes 30 --plot
 python -m src.analyze --plot --features
 python -m src.train --leave-one-out
 ```
+
+> 采集程序默认 `--address auto`，会自动探测 `0xF8` / `0x01`，不必手动指定。
 
 ---
 
@@ -106,7 +112,8 @@ python -m src.train --leave-one-out
 │   ├── 01-competition.md    # 赛题与评审规则（官方核实）
 │   ├── 02-solution.md       # 技术方案
 │   ├── 03-plan.md           # 执行计划与设备
-│   └── 04-research.md       # 调研与竞品
+│   ├── 04-research.md       # 调研与竞品
+│   └── 08-wiring-and-collection.md  # 接线与采集操作手册
 ├── src/
 │   ├── pzem.py              # PZEM-004T Modbus-RTU 驱动（零依赖）
 │   ├── collect.py           # 采集：存 CSV + 元数据 + 实时曲线
@@ -115,7 +122,10 @@ python -m src.train --leave-one-out
 │   └── synth.py             # 合成数据（仅流程验证）
 ├── tools/
 │   ├── list_ports.py        # 串口枚举
+│   ├── pzem_probe.py        # 地址探测（第一次上电先跑这个）
 │   └── pdf_extract.py       # PDF 文本提取
+├── tests/
+│   └── test_pzem_selftest.py  # 无硬件自测（桩串口）
 ├── sources/                 # 官方赛题原文、手册、标准等证据
 └── data/                    # 采集数据（不入库）
 ```

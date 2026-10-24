@@ -61,7 +61,7 @@ def collect(
     minutes: float,
     interval: float,
     plot: bool,
-    address: int = 1,
+    address: int | str = "auto",
 ) -> Path:
     """采集 ``minutes`` 分钟的电参量，返回 CSV 路径。"""
     signal.signal(signal.SIGINT, _handle_sigint)
@@ -206,7 +206,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     )
     parser.add_argument("--minutes", type=float, default=30.0, help="采集时长（分钟）")
     parser.add_argument("--interval", type=float, default=1.0, help="采样间隔（秒）")
-    parser.add_argument("--address", type=int, default=1, help="模块地址，默认 1")
+    parser.add_argument("--address", default="auto", help="模块地址；默认 auto（自动探测 0xF8/0x01）")
     parser.add_argument("--plot", action="store_true", help="是否实时绘图")
     args = parser.parse_args(argv)
 
