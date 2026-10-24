@@ -23,6 +23,7 @@
 | [docs/02-solution.md](docs/02-solution.md) | 技术方案：采集规格、特征、两个必做实验（少样本泛化/声电双模）、云端迭代机制、指标台账、演示脚本 |
 | [docs/04-research.md](docs/04-research.md) | 调研附录：竞品拆解（云南电网/安科瑞）、我们的位置、政策证据、创新性四层判据、踩过的坑 |
 | [docs/08-wiring-and-collection.md](docs/08-wiring-and-collection.md) | **实物操作手册**：PZEM 接线图、CT 安装、TTL 四线接法、上电验证、故障排查、安全红线 |
+| [docs/09-option-a-testbox.md](docs/09-option-a-testbox.md) | **方案 A 详解**：现成计量插座/测试盒的三种类型、哪根线插哪个口、验收与排障 |
 
 ---
 
